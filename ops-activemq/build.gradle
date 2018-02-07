@@ -1,0 +1,51 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.his.ops'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+ext {
+	springCloudVersion = 'Camden.SR7'
+}
+
+dependencies {
+
+	//模板
+	compile('org.springframework.boot:spring-boot-starter-velocity')
+	
+	//activemq连接池
+	compile group: 'org.apache.activemq', name: 'activemq-pool', version: '5.15.2'
+	compile('org.springframework.cloud:spring-cloud-starter-config')
+	compile('org.springframework.boot:spring-boot-starter-activemq')
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	//负载均衡
+	compile('org.springframework.cloud:spring-cloud-starter-feign')
+	compile('org.springframework.boot:spring-boot-starter-mail')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

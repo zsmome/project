@@ -1,0 +1,55 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.his.ops'
+version = '1.0.0'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	providedRuntime
+}
+
+dependencies {
+
+	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+
+	//测试
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.4'
+	
+	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	//注册中心
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	//负载均衡
+	compile('org.springframework.cloud:spring-cloud-starter-feign')
+	
+	runtime('mysql:mysql-connector-java')
+	//分页插件:版本不能太高
+	compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.2.1'
+}
+ext {
+	springCloudVersion = 'Camden.SR7'
+}
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

@@ -1,0 +1,59 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.183.130:8761/eureka/
+  instance:
+    hostname: 192.168.183.1
+server:
+  port: 8790
+spring:
+  application:
+    name: ops-activemq
+  #导入配置文件
+  cloud:
+    config:
+      uri: http://${server.port}:8888
+      profile: conf
+      label: master
+  #activemq连接
+  activemq:
+    broker-url: tcp://192.168.183.130:61616
+    user: admin
+    password: admin
+    pool:
+      enabled: true
+      max-connections: 50
+      expiry-timeout: 10000
+      idle-timeout: 30000
+  #开启主题消息
+  jms:
+    pub-sub-domain: true
+  #邮箱
+  mail:  
+    host: smtp.qq.com
+    username: 2632699904@qq.com
+    password: woflxyrprvucdibh
+    properties:  
+      mail: 
+        port: 465 
+        smtp:  
+          auth: true
+          starttls:  
+            enable: true  
+            required: true 
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory 
+#超时设置
+hystrix:  
+  command:  
+      default:  
+        execution:  
+          isolation:  
+            thread:  
+              timeoutInMilliseconds: 5000
+#日志输出  
+logging:
+  path: /root/data/logs/ops/
+  file: ops-activemq.log
+  level:
+    root: info

@@ -1,0 +1,33 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.183.130:8761/eureka/
+  instance:
+    hostname: localhost
+server:
+  port: 8810
+spring:
+  application:
+    name: ops-fdfs
+fdfs:
+  soTimeout: 1500
+  connectTimeout: 600
+  thumbImage:             #缩略图生成参数
+    width: 150
+    height: 150
+  trackerList:            #TrackerList参数,支持多个
+    - 192.168.183.130:22122
+#超时设置
+hystrix:  
+  command:  
+      default:  
+        execution:  
+          isolation:  
+            thread:  
+              timeoutInMilliseconds: 5000
+#日志输出  
+logging:
+  path: /root/data/logs/ops/
+  file: ops-fdfs.log
+  level:
+    root: info

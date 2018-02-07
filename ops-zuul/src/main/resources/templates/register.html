@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>康复中心-注册</title>
+
+    <!--easyui 资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/myicon.css" />
+
+    <!--本页资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/assests/css/register.css" />
+
+</head>
+<body class="bg">
+    <div id="registerBox">
+       	<form id="registerForm" method="post">   
+		    <div class="textbox-div">   
+		        <label>帐号：</label><input id="username" class="textbox" type="text" name="username" />
+		        <span id="usernameIcon" class="icon"></span>
+		        <span id="userMessage" class="message">*【6-8英文或数字】</span>
+		    </div>   
+		    <div class="textbox-div">   
+		        <label>密码：</label><input id="password" class="textbox" type="password" name="password" />
+		        <span id="passwordIcon" class="icon"></span>
+		        <span id="pwdMessage" class="message">*【8-20个字符组成】</span>
+		    </div> 
+		    <div class="textbox-div">   
+		        <label>确认：</label><input id="password2" class="textbox" type="password" name="password2" />
+		        <span id="password2Icon" class="icon"></span>  
+		        <span id="pwd2Message" class="message">*【两次密码不相同】</span>
+		    </div> 
+		</form>
+    </div>
+
+
+
+<!--easyui 资源-->
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/locale/easyui-lang-zh_CN.js" ></script>
+<!--本页资源-->
+<script type="text/javascript" src="/assests/js/valid.js"></script>
+<script type="text/javascript" src="/assests/js/register.js"></script>
+</body>
+</html>

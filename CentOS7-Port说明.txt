@@ -1,0 +1,24 @@
+服务器IP:192.168.183.130
+FDFS
+	Tracker(充当控制器)
+		disabled=false #启用配置文件（默认启用）
+		port=22122 #设置tracker的端口号，通常采用22122这个默认端口
+		base_path=/opt/fastdfs_tracker #设置tracker的数据文件和日志目录
+		http.server_port=6666 #设置http端口号，默认为8080
+
+	Storage(存储文件)
+		disabled=false #启用配置文件（默认启用）
+		group_name=group1 #组名，根据实际情况修改
+		port=23000 #设置storage的端口号，默认是23000，同一个组的storage端口号必须一致
+		base_path=/opt/fastdfs_storage #设置storage数据文件和日志目录
+		store_path_count=1 #存储路径个数，需要和store_path个数匹配
+		store_path0=/opt/fastdfs_storage_data #实际文件存储路径
+		tracker_server=192.168.111.11:22122 #tracker 服务器的 IP地址和端口号，如果是单机搭建，IP不要写127.0.0.1，否则启动不成功（此处的ip是我的CentOS虚拟机ip）
+		http.server_port=8888 #设置 http 端口号
+	Nginx(http服务)
+		9998(Tracker)
+		9999(Storage)
+
+Msql:3306
+ActiveMQ:61616(消息)、8161(管理)
+Redis:6379

@@ -1,0 +1,52 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.183.130:8761/eureka/
+  instance:
+    hostname: localhost
+server:
+  port: 80
+spring:
+  application:
+    name: ops-zuul
+  #redis缓存
+  redis:
+    host: 192.168.183.130
+    password: 
+    port: 6379
+    pool:
+      max-idle: 100
+      min-idle: 1
+      max-active: 1000
+      max-wait: -1
+  #静态页面热部署
+  thymeleaf:
+    cache: false
+  freemarker:
+    cache: false
+  groovy:
+    template:
+      cache: false
+#路由网关
+zuul:
+  routes:
+    ops-user:
+      path: /ops-user/**
+      serviceId: ops-user
+    ops-department:
+      path: /ops-department/**
+      serviceId: ops-department
+#超时设置
+hystrix:  
+  command:  
+      default:  
+        execution:  
+          isolation:  
+            thread:  
+              timeoutInMilliseconds: 30000
+#日志输出  
+logging:
+  path: /root/data/logs/ops/
+  file: ops-zuul.log
+  level:
+    root: info

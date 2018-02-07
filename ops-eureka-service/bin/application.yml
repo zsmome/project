@@ -1,0 +1,24 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://192.168.183.130:${server.port}/eureka/
+#超时设置
+hystrix:  
+  command:  
+      default:  
+        execution:  
+          isolation:  
+            thread:  
+              timeoutInMilliseconds: 5000
+#日志输出  
+logging:
+  path: /root/data/logs/ops/
+  file: ops-eureka-service.log
+  level:
+    root: info

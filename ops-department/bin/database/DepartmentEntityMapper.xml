@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.his.ops.mapper.DepartmentEntityMapper">
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from department
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.his.ops.entity.DepartmentEntity">
+    insert into department (id, depNo, depName, 
+      depDescribe, status)
+    values (#{id,jdbcType=INTEGER}, #{depNo,jdbcType=VARCHAR}, #{depName,jdbcType=VARCHAR}, 
+      #{depDescribe,jdbcType=VARCHAR}, #{status,jdbcType=BIT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.his.ops.entity.DepartmentEntity">
+    update department
+    <set>
+    	<if test="depNo != null">
+    		depNo = #{depNo,jdbcType=VARCHAR},
+    	</if>
+    	<if test="depName != null">
+    		depName = #{depName,jdbcType=VARCHAR},
+    	</if>
+    	<if test="depDescribe != null">
+    		depDescribe = #{depDescribe,jdbcType=VARCHAR},
+    	</if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer"  resultType="com.his.ops.entity.DepartmentEntity">
+    select id, depNo, depName, depDescribe, status
+    from department
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultType="com.his.ops.entity.DepartmentEntity" >
+    select id, depNo, depName, depDescribe, status
+    from department
+  </select>
+  
+    <!-- 修改可见状态 -->
+  <update id="updateStatus" parameterType="java.lang.Integer">
+    update department
+    set status =if(status = true,false,true)
+    where id in
+    <foreach collection="array" item="id" 
+        separator="," open="(" close=")">
+        #{id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  
+  <!-- 根据条件查询所有记录 -->
+  <select id="selectAllByCondition" parameterType="com.his.ops.entity.DepartmentEntity" resultType="com.his.ops.entity.DepartmentEntity">
+    select id, depNo, depName, depDescribe
+    from department
+    <where>
+    	<if test="depNo != null">
+    		and depNo like '%${depNo}%'
+		</if>
+		<if test="depName != null">
+    		and depName like '%${depName}%'
+		</if>
+		and status = #{status}
+    </where>
+  </select>
+  
+</mapper>

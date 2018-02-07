@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>康复中心-部门管理</title>
+
+    <!--easyui 资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/default/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/myicon.css"/>
+    <!--自扩展-->
+
+    <!--本页资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/css/global.css"/>
+    <link rel="stylesheet" type="text/css" href="/assests/css/userInfo.css"/>
+
+</head>
+<body>
+	<div id="userInfoTabs">   
+	    <div title="基本信息" data-options="iconCls:'icon-reload'">   
+            <!-- 上传头像 -->
+			<div class="base-info">
+				<form id="imageUploadForm" enctype="multipart/form-data">
+					<dl>
+						<dt>更改头像</dt>
+						<dd>
+							<!-- 显示头像 -->
+							<img id="headPortraitsImg" class="head-portraits-img" src=""/>
+						</dd>
+					</dl>
+					<!-- 保存 -->
+					<div>
+						<input id="selectFile" class="select-file" type="file" name="image" accept="image/*" />
+						<div id="saveUserInfo" class="easyui-linkbutton submit" data-options="plain:true,iconCls:'icon-submit'">保存头像</div>
+					</div>
+				</form>
+			</div>
+	    </div>   
+	    <div title="地址信息" data-options="iconCls:'icon-reload'">   
+	        tab2    
+	    </div>   
+	    <div title="其他信息" data-options="iconCls:'icon-reload'">   
+	        tab3    
+	    </div>   
+	</div> 
+
+
+<!--easyui 资源-->
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/locale/easyui-lang-zh_CN.js"></script>
+<!--本页资源-->
+<script type="text/javascript" src="/assests/js/global.js"></script>
+<script type="text/javascript" src="/assests/js/user-info.js"></script>
+<script type="text/javascript" src="/assests/js/valid.js"></script>
+</body>
+</html>

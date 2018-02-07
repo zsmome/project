@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>康复中心-登录</title>
+    <!--easyui 资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/myicon.css" />
+
+    <!--本页资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="/assests/css/global.css" />
+
+</head>
+<body class="bg">
+	<!-- <div class="logo">康复中心管理平台</div> -->
+    <div id="loginBox">
+    	<form id="loginForm" method="post">   
+		    <div class="textbox-div">   
+		        <label>帐号：</label><input id="username" class="easyui-textbox username" type="text" name="username" />   
+		    </div>   
+		    <div class="textbox-div">   
+		    	<label>密码：</label><input id="password" class="easyui-textbox password" type="password" name="password" />
+		    </div> 
+		    <div class="textbox-div">   
+		    	<div class="remember-me"><label for="rememberMe">记住密码&nbsp;</label><input id="rememberMe" type="checkbox" name="rememberMe" /></div>
+		    	<div class="clear"></div>
+		    </div>
+			<div id="message" class="message"></div>
+		</form>
+    </div>
+
+
+
+<!--easyui 资源-->
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/locale/easyui-lang-zh_CN.js" ></script>
+<!--本页资源-->
+<script type="text/javascript" src="/assests/js/login.js"></script>
+<script type="text/javascript" src="/assests/js/valid.js" ></script>
+</body>
+</html>

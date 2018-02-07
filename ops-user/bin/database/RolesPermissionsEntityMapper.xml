@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.his.ops.mapper.RolesPermissionsEntityMapper">
+  <resultMap id="BaseResultMap" type="com.his.ops.entity.RolesPermissionsEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="permission" jdbcType="VARCHAR" property="permission" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from roles_permissions
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.his.ops.entity.RolesPermissionsEntity">
+    insert into roles_permissions (id, role_name, permission
+      )
+    values (#{id,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR}, #{permission,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.his.ops.entity.RolesPermissionsEntity">
+    update roles_permissions
+    set role_name = #{roleName,jdbcType=VARCHAR},
+      permission = #{permission,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, role_name, permission
+    from roles_permissions
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, role_name, permission
+    from roles_permissions
+  </select>
+  <!--根据角色名查询角色拥有的所有权限  -->
+  <select id="selectRolesPermissionsByRoleName" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select id, role_name, permission 
+	from roles_permissions where role_name=#{roleName,jdbcType=VARCHAR}
+  </select>
+</mapper>

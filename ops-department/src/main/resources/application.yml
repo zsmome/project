@@ -1,0 +1,33 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.183.130:8761/eureka/
+  instance:
+    hostname: localhost
+server:
+  port: 8781
+spring:
+  application:
+    name: ops-department
+  #数据源
+  datasource:
+    url: jdbc:mysql://${eureka.instance.hostname}/his
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: mysql
+#超时设置
+hystrix:  
+  command:  
+      default:  
+        execution:  
+          isolation:  
+            thread:  
+              timeoutInMilliseconds: 5000
+#日志输出  
+logging:
+  path: /root/data/logs/ops/
+  file: ops-department.log
+  level:
+    root: info

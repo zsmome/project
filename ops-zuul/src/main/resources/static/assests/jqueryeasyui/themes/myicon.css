@@ -1,0 +1,91 @@
+.icon-login-head{
+	background:url('myicons/login-head.png') no-repeat center center;
+}
+.icon-login-head-big{
+	background:url('myicons/login-head-big.png') no-repeat center center;
+}
+.icon-user{
+	background:url('myicons/user.png') no-repeat center center;
+}
+.icon-password{
+	background:url('myicons/password.png') no-repeat center center;
+}
+.icon-password2{
+	background:url('myicons/password2.png') no-repeat center center;
+}
+.icon-login{
+	background:url('myicons/login.png') no-repeat center center;
+}
+.icon-register{
+	background:url('myicons/register.png') no-repeat center center;
+}
+.icon-refresh{
+	background:url('myicons/refresh.png') no-repeat center center;
+}
+
+.icon-right{
+	background:url('myicons/right.png') no-repeat center center;
+}
+.icon-error{
+	background:url('myicons/error.png') no-repeat center center;
+}
+/* 床 */
+.icon-bed{
+	background:url('myicons/bed.png') no-repeat center center;
+}
+/* 取消 */
+.icon-cancel{
+	background:url('myicons/cancel.png') no-repeat center center;
+}
+/* 删除 */
+.icon-delete{
+	background:url('myicons/delete.png') no-repeat center center;
+}
+/* 部门 */
+.icon-department{
+	background:url('myicons/department.png') no-repeat center center;
+}
+/* 描述  */
+.icon-describe{
+	background:url('myicons/describe.png') no-repeat center center;
+}
+/* 医生 */
+.icon-doctor{
+	background:url('myicons/doctor.png') no-repeat center center;
+}
+/* 编辑  */
+.icon-edit{
+	background:url('myicons/edit.png') no-repeat center center;
+}
+/* 家 */
+.icon-home{
+	background:url('myicons/home.png') no-repeat center center;
+}
+/* 名 */
+.icon-name{
+	background:url('myicons/name.png') no-repeat center center;
+}
+/* 新建 */
+.icon-new{
+	background:url('myicons/new.png') no-repeat center center;
+}
+/* 编号 */
+.icon-no{
+	background:url('myicons/no.png') no-repeat center center;
+}
+/* 查询 */
+.icon-query{
+	background:url('myicons/query.png') no-repeat center center;
+}
+/* 还原 */
+.icon-restore{
+	background:url('myicons/restore.png') no-repeat center center;
+}
+/* 科室 */
+.icon-section{
+	background:url('myicons/section.png') no-repeat center center;
+}
+/* 提交 */
+.icon-submit{
+	background:url('myicons/submit.png') no-repeat center center;
+}

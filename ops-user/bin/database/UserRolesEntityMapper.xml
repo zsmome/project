@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.his.ops.mapper.UserRolesEntityMapper">
+  <resultMap id="BaseResultMap" type="com.his.ops.entity.UserRolesEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+  </resultMap>
+  
+  <sql id="allFiled">id, username, role_name</sql>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_roles
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.his.ops.entity.UserRolesEntity">
+    insert into user_roles (id, username, role_name
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.his.ops.entity.UserRolesEntity">
+    update user_roles
+    set username = #{username,jdbcType=VARCHAR},
+      role_name = #{roleName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, username, role_name
+    from user_roles
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, username, role_name
+    from user_roles
+  </select>
+  <!-- 根据用户名查询用户所拥有的角色 -->
+  <select id="selectRolesByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select id, username, role_name
+	from user_roles where username=#{username,jdbcType=VARCHAR}
+  </select>
+</mapper>

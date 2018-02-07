@@ -1,0 +1,81 @@
+
+/*-------------上布局开始-------------*/
+
+.top { height: 60px;padding-top:5px;}
+
+/*上左布局*/
+.top-left {width: 200px;}
+
+.top-bg { color:#558068;}
+
+/*上中布局*/
+.top-center {}
+
+/*上右布局*/
+.top-right {width: 200px;}
+
+
+/*运行时长*/
+.top .time {float:left;width:130px;padding:3px;font-size:14px;}
+.login-out {float:left;}
+.duration {font-size:16; padding-right:8px; font-style: italic; font-weight:bold;color:#CE6666; border-radius:30px;background:#E7E4E4;}
+
+
+/* 欢迎消息*/
+.top .welcome-info {font-size: 16px; line-height:24px;}
+.login-name {color:#CE6666;line-height:24px;font-size:20px;}
+
+/* 头像 */
+.head-portraits-img{float:left;cursor:pointer;border:2px solid #eee;border-radius:50px;width:50px;height:50px;}
+
+.user-drop-down-list li {width:inherit;height:40px;}
+
+/* 注销按钮*/
+.top .login-out {float:left;line-height:50px;font-size: 16px; font-weight: bold; }
+
+/*导航*/
+.nav { position:absolute; bottom: 5px; right:20px;}
+
+/*导航链接*/
+.nav .link {float: left; line-height: 30px; font-size: 14px; margin: 0px 5px; padding:0px 5px;}
+
+/*-------------上布局结束-------------*/
+
+
+
+/*-------------左布局开始-------------*/
+
+.left {width: 140px;}
+
+/*左导航链接*/
+.left-link{cursor: pointer;width:100%;height:40px;line-height: 40px; text-align: center; font-size: 16px; }
+
+/*-------------左布局结束-------------*/
+
+
+
+/*-------------中间布局开始-------------*/
+
+.center {
+}
+
+/*-------------中间布局结束-------------*/
+
+
+
+/*-------------下布局开始-------------*/
+
+.bottom {height: 30px;background:#d1ebdf;}
+
+
+
+/*版权*/
+.bottom .copy {line-height: 30px;height: 100%;text-align: center;color: #53868B;font-size: 14px;}
+
+/*-------------下布局结束-------------*/
+
+
+a, .left-link {display: block;text-decoration: none;font-size: 14px;color: #2d9f7a;border-radius: 4px;background: #d1ebdf;}
+/*导航滑过*/
+a:hover, .left-link:hover{background: #558068;color: #f8ffff;}
+.left-link{border-radius: 0px;}

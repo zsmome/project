@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>康复中心-部门管理</title>
+
+    <!--easyui 资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/default/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/myicon.css"/>
+    <!--自扩展-->
+
+    <!--本页资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/css/global.css"/>
+    <link rel="stylesheet" type="text/css" href="/assests/css/department.css"/>
+
+</head>
+<body class="easyui-layout" data-options="fit:true">
+
+
+<!--部门数据表格-->
+<div id="departmentDg" ></div>
+<div class="tb" id="tb">
+        
+        <!--操作-->
+        <div class="op">
+	        <a href="javascript:restoreDataDialog();"  class="easyui-linkbutton" data-options="text:'回收站',iconCls:'icon-restore',plain:true"></a>
+	        <a href="javascript:dataGridOp.editWindow('new');" class="easyui-linkbutton" data-options="text:'新增',iconCls:'icon-new',plain:true"></a>
+	        <a href="javascript:dataGridOp.editWindow('edit');"  class="easyui-linkbutton" data-options="text:'编辑',iconCls:'icon-edit',plain:true"></a>
+	        <a href="javascript:dataGridOp.removeRow();"  class="easyui-linkbutton" data-options="text:'删除',iconCls:'icon-delete',plain:true"></a>
+        </div>
+        <!--搜索-->
+        <div class="dataSearch">
+	        <span>部门编号</span><input id="depNoSearch" type="text" name="depNo" class="search-textbox textbox"/>
+	        <span>部门名称</span><input id="depNameSearch" type="text" name="depName" class="search-textbox textbox"/>
+	        <div onclick="dataGridOp.search('#depNoSearch', '#depNameSearch')" class="easyui-linkbutton"
+	             data-options="iconCls:'icon-query', plain:true,">查询</div>
+        </div>
+</div>
+
+<!-- 弹窗 还原数据表格 -->
+<div id="datagridDialog">
+	<div id="restoreDatagrid"></div>
+</div>
+
+<!--新增、编辑弹窗-->
+<div id="newAndEditWindow">
+	<div class="form-box" style="width:230px;margin:0px auto;">
+		<form id="newAndEditForm" method="post">
+		    <!--隐藏的id-->
+		    <input id="id" name="id" type="hidden"/>
+		    <div class="textbox-div" style="margin:10px 0px;">
+		        <label>编号：</label><input id="depNo" class="textbox" name="depNo"/>
+		    </div>
+		    <div class="textbox-div" style="margin:10px 0px;">
+		        <label>名称：</label><input id="depName" class="textbox" name="depName"/>
+		    </div>
+		    <div class="textbox-div" style="margin:10px 0px;">
+		        <label>描述：</label><input id="depDescribe" class="textbox" name="depDescribe"/>
+		    </div>
+		</form>
+	</div>
+</div>
+
+
+<!--easyui 资源-->
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/locale/easyui-lang-zh_CN.js"></script>
+<!--本页资源-->
+<script type="text/javascript" src="/assests/js/global.js"></script>
+<script type="text/javascript" src="/assests/js/department.js"></script>
+<script type="text/javascript" src="/assests/js/valid.js"></script>
+</body>
+</html>

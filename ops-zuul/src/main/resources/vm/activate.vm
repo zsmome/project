@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<body>
+您正在注册康复中心帐号<br/>
+请在1 小时内点击此链接以完成激活<br/>
+<a href="${activateURL}">${activateURL}</a>
+</body>
+</html>

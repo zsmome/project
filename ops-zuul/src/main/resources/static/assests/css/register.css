@@ -1,0 +1,24 @@
+
+/*登录框*/
+#registerBox {
+	width:400px;
+    padding-top: 10px;
+}
+
+
+.textbox-div {
+	padding-left:20px;
+    margin:10px auto;
+}
+.message {width:320px;margin:5px auto;text-align: center;}
+
+/*通过状态*/
+.enableWorld {color:#20aea8}
+
+/*禁用状态*/
+
+.disableWorld {color:#d81e06}
+
+.logo{position:relative;margin-top:50px;width:100%;text-align: center;font-size:36px;color:#19B076;}
+
+.remember-me {float:right;}

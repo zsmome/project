@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>康复中心-首页</title>
+
+    <!--easyui 资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="/assests/jqueryeasyui/themes/myicon.css" />
+    <!--自扩展-->
+
+    <!--本页资源-->
+    <link rel="stylesheet" type="text/css" href="/assests/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/assests/css/index.css"/>
+
+</head>
+<body class="easyui-layout" data-options="fit:true">
+
+<div id="loading">
+	<div class="loading-img"><img src="/assests/img/loading.png"/><h1>努力加载中...</h1></div>
+</div> 
+
+    <!--上布局导航-->
+    <div class="top" data-options="region:'north',border:false">
+        <div class="easyui-layout" data-options="fit:true">
+            <!--左-->
+            <div class="top-left top-bg" data-options="region:'west', border:false"><img src="/assests/img/logo.png" style="width:140px;height:56px;"/></div>
+            <!--右-->
+            <div class="top-right top-bg" data-options="region:'east', border:false">
+                <!-- 上传头像 -->
+                <img id="headPortraitsImg" class="head-portraits-img" src="" onclick="userInfo()"/>
+                <!-- 注销 -->
+                <div class="login-out"><a href="/logout" class="easyui-linkbutton" data-options="iconCls:'icon-error', plain:true">注销用户</a></div>
+            </div>
+            <!--中-->
+            <div class="top-center top-bg" data-options="region:'center', border:false">
+                <div class="nav">
+                    <a href="#" class="link">首页</a>
+                    <a href="#" class="link">基础数据</a>
+                    <a href="#" class="link">病床护理</a>
+                    <a href="#" class="link">个人中心</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--左布局-->
+    <div class="left" data-options="region:'west',title:'导航栏',border:false">
+    	<div id="leftNav" class="easyui-accordion" data-options="fit:true,">
+    		<!-- 部门管理 -->
+		    <div title="部门管理" data-options="iconCls:'icon-department'">   
+	        	<div id="department" target="department" onclick="generateTAB('department', '/admin/department')" class="left-link">数据操作</div>
+		    </div>  
+		     <!-- 科室管理 -->
+		    <div title="科室管理" data-options="iconCls:'icon-section'">   
+	        	<div id="section" target="section" onclick="generateTAB('section', '/admin/section')" class="left-link">科室管理</div>
+		    </div>  
+		     <!-- 医生管理 -->
+		    <div title="医生管理" data-options="iconCls:'icon-doctor'">   
+	        	<div id="doctor" target="doctor" onclick="generateTAB('doctor', '/admin/doctor')" class="left-link">医生管理</div>
+		    </div> 
+		      <!-- 床位管理 -->
+		    <div title="床位管理" data-options="iconCls:'icon-bed'">   
+		        <div id="berth" target="berth" onclick="generateTAB('berth', '/admin/berth')" class="left-link">床位管理</div>
+		    </div>   
+		    
+    	</div>  
+    </div>
+
+    <!--中间布局-->
+    <div id="center" class="center" data-options="region:'center', border:false">
+        <div id="tabs">
+            <div title="起始页" iconCls="icon-house" >
+                	欢迎来到后台管理系统！
+            </div>
+        </div>
+    </div>
+
+    <!--下布局-->
+    <div class="bottom" data-options="region:'south'">
+        <div class="copy">&copy;版权归康复中心所有&nbsp;&nbsp;法律责任：侵范本医院条约，必究！</div>
+    </div>
+
+<!--easyui 资源-->
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/assests/jqueryeasyui/locale/easyui-lang-zh_CN.js" ></script>
+<!--自扩展-->
+<!--本页资源-->
+<script type="text/javascript" src="/assests/js/global.js"></script>
+<script type="text/javascript" src="/assests/js/valid.js" ></script>
+<script type="text/javascript" src="/assests/js/index.js"></script>
+</body>
+</html>
